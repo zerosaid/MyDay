@@ -227,9 +227,92 @@
             text-align: center;
         }
 
-        #nosotros {
-            background-color: #ffebf2;
+        .nosotros {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
         }
+
+        .nosotros .bolita-1 {
+            margin-bottom: 20px;
+        }
+        
+        .nosotros .bolita-2 {
+            margin-top: 20px;
+        }
+        
+        .img-tex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            z-index: 3; 
+            position: relative;
+            padding-top: 50px;
+        }
+        
+        .img-tex img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .img-tex .texto {
+            text-align: left;
+            max-width: 600px;
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .img-tex {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        
+            .img-tex .texto {
+                text-align: center;
+                padding: 0 10px;
+                margin-top: 10px;
+            }
+        }
+        
+        
+        .nosotros .bolita-1,
+        .nosotros .bolita-2 {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1000px;
+        }
+        
+        .img-tex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1000px;
+            flex-wrap: wrap;
+        }
+        
+        .img-tex img {
+            width: 250px;
+            height: auto;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+        
+        .img-tex .texto {
+            text-align: left;
+            max-width: 600px;
+        }
+        
 
         #galeria {
             background-color: #f2f2f2;
@@ -271,6 +354,86 @@
         html {
             scroll-behavior: smooth;
         }
+        body {
+            font-family: sans-serif;
+            position: relative;
+            overflow-x: hidden;
+          }
+      
+          .decoraciones {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+          }
+      
+          .nosotros {
+            position: relative;
+            z-index: 3;
+            background-color: #ffffcc;
+            padding-top: 80px;
+            padding-bottom: 80px;
+          }
+      
+          .img-tex {
+            position: relative;
+            z-index: 3;
+          }
+      
+          .img-tex img,
+          .img-tex .texto {
+            position: relative;
+            z-index: 3;
+          }
+      
+          .imagen-superpuesta,
+          .imagenizquierdapareja,
+          .simboloazul,
+          .simbolorosa {
+            max-width: 100%;
+            height: auto;
+          }
+      
+          .imagen-superpuesta {
+            top: 60%;
+            width: 30%;
+            max-width: 400px;
+            position: absolute;
+            z-index: 1;
+            border: 1px solid black;
+            border-radius: 45%;
+          }
+      
+          .imagenizquierdapareja {
+            top: 32%;
+            width: 15%;
+            max-width: 350px;
+            position: absolute;
+            z-index: 1;
+            border: 1px solid black;
+            border-radius: 30px;
+          }
+      
+          .simboloazul {
+            top: 30%;
+            width: 5%;
+            max-width: 100px;
+            position: absolute;
+            z-index: 1;
+            margin-left: 695px;
+          }
+      
+          .simbolorosa {
+            top: 46%;
+            width: 8%;
+            max-width: 150px;
+            position: absolute;
+            z-index: 1;
+            margin-left: 1200px;
+          }
     </style>
 </head>
 <body>
@@ -311,45 +474,66 @@
     </nav>
 
     <div class="contenedor-principal">
-        <div class="mitadsuperior">
-            <div class="texto-superpuesto">CAPTURAMOS <br> LOS <br> SENTIMIENTOS</div>
-            <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="imagen1" class="imagen-superpuesta">
+      <div class="mitadsuperior">
+        <div class="texto-superpuesto">CAPTURAMOS <br> LOS <br> SENTIMIENTOS</div>
+        <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="imagen1" class="imagen-superpuesta">
+      </div>
+  
+      <img src="imagenes/5fcb349305dfbd5c7d34650e_6016108-R1-E004.jpg" alt="Pareja" class="imagenizquierdapareja">
+      <img src="imagenes/5fc5bd55289f5713c1684ca5_hero-large-shape.svg" alt="Símbolo azul" class="simboloazul">
+      <img src="imagenes/60775529fa8ba96b3888b03f_hero_circle-new-01.png" alt="Símbolo rosa" class="simbolorosa">
+  
+      <div class="mitadinferior">
+        
+        
+      </div>
+      <section id="nosotros" class="nosotros">
+        <div class="bolita-1">
+          <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
+          LOVERS OF LOVERS FINE ART FILM PHOTOGRAPHERS
+          <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
         </div>
-
-        <img src="imagenes/5fcb349305dfbd5c7d34650e_6016108-R1-E004.jpg" alt="Pareja" class="imagenizquierdapareja">
-        <img src="imagenes/5fc5bd55289f5713c1684ca5_hero-large-shape.svg" alt="Símbolo azul" class="simboloazul">
-        <img src="imagenes/60775529fa8ba96b3888b03f_hero_circle-new-01.png" alt="Símbolo rosa" class="simbolorosa">
-    
-        <div class="mitadinferior"></div>
+        <div class="img-tex">
+          <img src="imagenes/5fc5c74bb7097299fbc5a3dd_RETO-OutputVideo-20191018212828-pos.jpg" alt="Nosotros">
+          
+            <h2>HOLA AQUÍ</h2>
+            <p>
+              Somos catadores de pasteles profesionales, pregoneros de bodas y amantes del amor.
+              En resumen, ¡somos grandes fanáticos del matrimonio! El matrimonio es un compromiso muy especial,
+              y tu boda marca el testimonio y la celebración de este vínculo. Estamos muy emocionados por este
+              increíble próximo capítulo de tu vida. ¡Lo recomendamos de todo corazón!
+            </p>
+            <h3>TUS NUPCIALISTAS</h3>
+        </div>
+        <div class="bolita-2">
+          <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
+          <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
+        </div>
+      </section>
     </div>
-
-    <section id="nosotros" class="nosotros">
-        <h1>HOLA AQUÍ</h1>
-        <p>Somos una pareja de fotógrafos apasionados por capturar momentos únicos y especiales en cada boda.</p>
-    </section>
-
+  
     <section id="galeria" class="galeria">
-        <h1>GALERÍA</h1>
-        <div class="galeria-imagenes">
-            <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="Boda" class="img1"/>
-            <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="Boda" class="img1"/>
-        </div>
+      <h1>GALERÍA</h1>
+      <div class="galeria-imagenes">
+        <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="Boda" class="img1"/>
+        <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="Boda" class="img1"/>
+      </div>
     </section>
-
+  
     <section id="precios" class="precios degradado">
-        <h1>PRECIOS</h1>
-        <p>Paquete 1: $1000</p>
-        <p>Paquete 2: $2000</p>
-        <p>Paquete 3: $3000</p>
+      <h1>PRECIOS</h1>
+      <p>Paquete 1: $1000</p>
+      <p>Paquete 2: $2000</p>
+      <p>Paquete 3: $3000</p>
     </section>
-
+  
     <section id="contacto" class="contacto degradado">
-        <h1>CONTACTO</h1>
-        <p>Teléfono: 123-456-7890</p>
-        <p>Email: contacto@example.com</p>
+      <h1>CONTACTO</h1>
+      <p>Teléfono: 123-456-7890</p>
+      <p>Email: contacto@example.com</p>
     </section>
-
+  
     <button class="chat-button">CHAT</button>
-
-</body>
-</html>
+  
+  </body>
+  </html>
