@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @font-face {
+            font-family: 'Gulfs Display Normal';
+            src: url('font/GulfsDisplay-Normal.eot');
+            src: local('Gulfs Display Normal'), local('GulfsDisplay-Normal'),
+                url('font/GulfsDisplay-Normal.eot?#iefix') format('embedded-opentype'),
+                url('font/GulfsDisplay-Normal.woff2') format('woff2'),
+                url('font/GulfsDisplay-Normal.woff') format('woff'),
+                url('font/GulfsDisplay-Normal.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+            background-color: pink;
+            font-family: 'Gulfs Display Normal';
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        .nav-item img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        .contenedor-principal {
+            height: calc(100vh - 69px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mitadsuperior {
+            flex: 1;
+            background-color: pink;
+            display: flex;
+            color: blue;
+            font-size: 50px;
+            font-family: 'Gulfs Display Normal';
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+            line-height: 50px;
+            z-index: 0;
+        }
+
+        .mitadinferior {
+            flex: 1;
+            background-color: lightgoldenrodyellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imagen-superpuesta {
+            top: 60%;
+            width: 20%;
+            height: 700px;
+            align-content: center;
+            position: absolute;
+            z-index: 1;
+            border: 1px solid black;
+            border-radius: 45%;
+        }
+
+        .texto-superpuesto {
+            position: absolute;
+            z-index: 2;
+            color: blue;
+            font-size: 50px;
+            font-family: 'Gulfs Display Normal';
+            text-align: center;
+            line-height: 50px;
+        }
+
+
+        .imagenizquierdapareja {
+            top: 32%;
+            width: 15%;
+            height: 450px;
+            align-content: center;
+            position: absolute;
+            z-index: 1;
+            border: 1px solid black;
+            border-radius: 30px;
+        }
+
+        .simboloazul {
+            top: 30%;
+            width: 5%;
+            height: 450px;
+            align-content: center;
+            position: absolute;
+            z-index: 1;
+            margin-left: 695px;
+        }
+
+        .simbolorosa {
+            top: 46%;
+            width: 8%;
+            height: 120px;
+            margin-left: 1200px;
+            position: absolute;
+            z-index: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-item">
+            <img src="imagenes/5fc5b7daf46a9b00a66bf021_nav-heart.svg" alt="nosotros">
+            <span>Nosotros</span>
+        </div>
+        <div class="nav-item">
+            <img src="imagenes/5fc5b7dace2996029a332c01_nav-star.svg" alt="galeria">
+            <span>Galería</span>
+        </div>
+        <div class="nav-item">
+            <img src="imagenes/5fc5b7d9d088cd3b91add7e7_nav-flower.svg" alt="Precios">
+            <span>Precios</span>
+        </div>
+        <div class="nav-item">
+            <img src="imagenes/5fc5b7dabad27a31ffba4fc4_nav-shape.svg" alt="contacto">
+            <span>Contacto</span>
+        </div>
+    </nav>
+
+    <div class="contenedor-principal">
+        <div class="mitadsuperior">
+            <div class="texto-superpuesto">CAPTURAMOS <br> LOS <br> SENTIMIENTOS</div>
+            <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="imagen1" class="imagen-superpuesta">
+        </div>
+
+        <img src="imagenes/5fcb349305dfbd5c7d34650e_6016108-R1-E004.jpg" alt="Pareja" class="imagenizquierdapareja">
+        <img src="imagenes/5fc5bd55289f5713c1684ca5_hero-large-shape.svg" alt="Símbolo azul" class="simboloazul">
+        <img src="imagenes/60775529fa8ba96b3888b03f_hero_circle-new-01.png" alt="Símbolo rosa" class="simbolorosa">
+    
+        <div class="mitadinferior"></div>
+    </div>
+
+</body>
+</html>

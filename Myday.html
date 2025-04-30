@@ -1,242 +1,355 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Day</title>
-  <link rel="icon" href="imagenes/descarga.png" type="image/png" />
-  <link href="/imagenes/image (5).svg" rel="stylesheet">
-  <style>
-    :root {
-      --rosa: #fcd0d9;
-      --amarillo: #fef36a;
-      --azul: #0657f9;
-      --negro: #000;
-      --fuente-titular: 'Gulfs Display', sans-serif;
-      --fuente-secundaria: 'Anybody', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="imagenes/anillo-de-bodas.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @font-face {
+            font-family: 'Gulfs Display Normal';
+            src: url('font/GulfsDisplay-Normal.eot');
+            src: local('Gulfs Display Normal'), local('GulfsDisplay-Normal'),
+                url('font/GulfsDisplay-Normal.eot?#iefix') format('embedded-opentype'),
+                url('font/GulfsDisplay-Normal.woff2') format('woff2'),
+                url('font/GulfsDisplay-Normal.woff') format('woff'),
+                url('font/GulfsDisplay-Normal.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-    body {
-      margin: 0;
-      font-family: var(--fuente-secundaria);
-      scroll-behavior: smooth;
-    }
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
-    header {
-      background-color: var(--rosa);
-      position: relative;
-      z-index: 100;
-    }
+        body {
+            font-family: sans-serif;
+        }
 
-    #menu-toggle {
-      display: none;
-    }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: pink;
+            font-family: 'Gulfs Display Normal';
+            font-weight: normal;
+            font-style: normal;
+            align-items: center;
+        }
 
-    .hamburger {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      width: 40px;
-      height: 40px;
-      z-index: 1001;
-      cursor: pointer;
-    }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+            cursor: pointer;
+        }
 
-    .hamburger span {
-      display: block;
-      width: 100%;
-      height: 4px;
-      background: var(--negro);
-      margin: 6px 0;
-      transition: 0.3s;
-    }
+        .nav-item img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
 
-    .mobile-menu {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100vh;
-      background: var(--rosa);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transform: translateY(-100%);
-      transition: transform 0.3s ease-in-out;
-      z-index: 1000;
-    }
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+        }
 
-    #menu-toggle:checked + .hamburger + .mobile-menu {
-      transform: translateY(0);
-    }
+        .hamburger-menu div {
+            width: 100%;
+            height: 4px;
+            background-color: black;
+        }
 
-    .mobile-menu ul {
-      list-style: none;
-      padding: 2px;
-      margin: 2px;
-      text-align: center;
-    }
+        .hamburger-checkbox {
+            display: none;
+        }
 
-    .mobile-menu a {
-      font-family: var(--fuente-titular);
-      font-size: 2rem;
-      color: var(--negro);
-      text-decoration: none;
-      padding: 1rem;
-      display: block;
-    }
+        .menu-items {
+            display: flex;
+        }
 
-    .chat-button {
-      position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      background: var(--amarillo);
-      border-radius: 50%;
-      padding: 1rem;
-      font-weight: bold;
-      border: 2px solid var(--negro);
-      cursor: pointer;
-      z-index: 1000;
-    }
+        @media (max-width: 768px) {
+            .menu-items {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: pink;
+                padding: 10px;
+            }
 
-    section {
-      padding: 4rem 1rem;
-      text-align: center;
-    }
+            .hamburger-checkbox:checked + .menu-items {
+                display: flex;
+            }
 
-    .inicio h2,
-    .nosotros h1,
-    .galeria h1,
-    .precios h1,
-    .contacto h1 {
-      font-family: var(--fuente-titular);
-      font-size: 2.5rem;
-      color: var(--azul);
-    }
+            .hamburger-menu {
+                display: flex;
+            }
 
-    .img1 {
-      display: block;
-      margin: 0 auto;
-      padding: 20px;
-      width: 200px;
-      height: 250px;
-      border: solid 1px;
-      border-radius: 20px;
-    }
+            .nav-item {
+                margin: 10px 0;
+                text-align: center;
+                width: 100%;
+            }
 
-    /* Menú para pantallas grandes */
-    @media (min-width: 768px) {
-      .mobile-menu {
-        display: none !important;
-      }
+            .nav-item a {
+                text-decoration: none;
+                color: black;
+                padding: 10px;
+                display: block;
+            }
 
-      .hamburger {
-        display: none;
-      }
+            .nav-item a:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+        }
 
-      nav.desktop-menu {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        padding: 1rem;
-        background-color: var(--rosa);
-        font-family: var(--fuente-titular);
-      }
+        .contenedor-principal {
+            height: calc(100vh - 69px);
+            display: flex;
+            flex-direction: column;
+        }
 
-      nav.desktop-menu a {
-        text-decoration: none;
-        font-size: 1.2rem;
-        color: var(--negro);
-        padding: 0.5rem 1rem;
-        background-color: var(--amarillo);
-        border: 2px solid var(--negro);
-        border-radius: 20px;
-        transition: 0.3s;
-      }
+        .mitadsuperior {
+            flex: 1;
+            background-color: pink;
+            display: flex;
+            color: blue;
+            font-size: 50px;
+            font-family: 'Gulfs Display Normal';
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+            line-height: 50px;
+            z-index: 0;
+        }
 
-      nav.desktop-menu a:hover {
-        background-color: var(--azul);
-        color: white;
-      }
+        .mitadinferior {
+            flex: 1;
+            background-color: lightgoldenrodyellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-      .inicio {
-        background: linear-gradient(var(--rosa) 70%, var(--amarillo) 30%);
-      }
+        .imagen-superpuesta, .imagenizquierdapareja, .simboloazul, .simbolorosa {
+            max-width: 100%;
+            height: auto;
+        }
 
-      .inicio h2 {
-        font-size: 3rem;
-      }
+        .imagen-superpuesta {
+            top: 60%;
+            width: 30%;
+            max-width: 400px;
+            align-content: center;
+            position: absolute;
+            z-index: 1;
+            border: 1px solid black;
+            border-radius: 45%;
+        }
 
-      .inicio img {
-        width: 300px;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 20px;
-        border: 4px solid var(--negro);
-        margin: 2rem auto;
-        display: block;
-      }      
+        .texto-superpuesto {
+            position: absolute;
+            z-index: 2;
+            color: blue;
+            font-size: 50px;
+            font-family: 'Gulfs Display Normal';
+            text-align: center;
+            line-height: 50px;
+        }
 
-    }
-  </style>
+        .imagenizquierdapareja {
+            top: 32%;
+            width: 15%;
+            max-width: 350px;
+            height: auto;
+            align-content: center;
+            position: absolute;
+            z-index: 1;
+            border: 1px solid black;
+            border-radius: 30px;
+        }
+
+        .simboloazul {
+            top: 30%;
+            width: 5%;
+            max-width: 100px;
+            height: auto;
+            align-content: center;
+            position: absolute;
+            z-index: 1;
+            margin-left: 695px;
+        }
+
+        .simbolorosa {
+            top: 46%;
+            width: 8%;
+            max-width: 150px;
+            height: auto;
+            margin-left: 1200px;
+            position: absolute;
+            z-index: 1;
+        }
+
+        @media (min-width: 768px) {
+            .imagen-superpuesta {
+                top: 50%;
+                width: 25%;
+                max-width: 350px;
+            }
+
+            .imagenizquierdapareja {
+                width: 12%;
+            }
+
+            .mitadsuperior {
+                font-size: 60px;
+            }
+
+            .mitadinferior {
+                font-size: 25px;
+            }
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #nosotros {
+            background-color: #ffebf2;
+        }
+
+        #galeria {
+            background-color: #f2f2f2;
+        }
+
+        #precios {
+            background-color: #fff7e6;
+        }
+
+        #contacto {
+            background-color: #f0f8ff;
+        }
+
+        .galeria-imagenes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .galeria-imagenes img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
 
-<header id="inicio">
-  <input type="checkbox" id="menu-toggle">
-  <label class="hamburger" for="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
+    <nav class="navbar">
+        <input type="checkbox" id="menu-toggle" class="hamburger-checkbox">
+        <div class="hamburger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu-items">
+            <div class="nav-item">
+                <a href="#nosotros">
+                    <img src="imagenes/5fc5b7daf46a9b00a66bf021_nav-heart.svg" alt="nosotros">
+                    <span>Nosotros</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#galeria">
+                    <img src="imagenes/5fc5b7dace2996029a332c01_nav-star.svg" alt="galeria">
+                    <span>Galería</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#precios">
+                    <img src="imagenes/5fc5b7d9d088cd3b91add7e7_nav-flower.svg" alt="Precios">
+                    <span>Precios</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#contacto">
+                    <img src="imagenes/5fc5b7dabad27a31ffba4fc4_nav-shape.svg" alt="contacto">
+                    <span>Contacto</span>
+                </a>
+            </div>
+        </div>
+    </nav>
 
-  <nav class="desktop-menu">
-    <a href="#nosotros">❤️ Nosotros</a>
-    <a href="#galeria">🌸 Galería</a>
-    <a href="#precios">⭐ Precios</a>
-    <a href="#contacto">🌟 Contacto</a>
-  </nav>
+    <div class="contenedor-principal">
+        <div class="mitadsuperior">
+            <div class="texto-superpuesto">CAPTURAMOS <br> LOS <br> SENTIMIENTOS</div>
+            <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="imagen1" class="imagen-superpuesta">
+        </div>
 
-  <nav class="mobile-menu">
-    <ul>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#galeria">Galería</a></li>
-      <li><a href="#precios">Precios</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
+        <img src="imagenes/5fcb349305dfbd5c7d34650e_6016108-R1-E004.jpg" alt="Pareja" class="imagenizquierdapareja">
+        <img src="imagenes/5fc5bd55289f5713c1684ca5_hero-large-shape.svg" alt="Símbolo azul" class="simboloazul">
+        <img src="imagenes/60775529fa8ba96b3888b03f_hero_circle-new-01.png" alt="Símbolo rosa" class="simbolorosa">
+    
+        <div class="mitadinferior"></div>
+    </div>
 
-<section class="inicio">
-  <h2>CAPTURAMOS LOS SENTIMIENTOS</h2>
-  <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="Boda" />
-</section>
+    <section id="nosotros" class="nosotros">
+        <h1>HOLA AQUÍ</h1>
+        <p>Somos una pareja de fotógrafos apasionados por capturar momentos únicos y especiales en cada boda.</p>
+    </section>
 
-<section id="nosotros" class="nosotros">
-  <h1>HOLA AQUÍ</h1>
-</section>
+    <section id="galeria" class="galeria">
+        <h1>GALERÍA</h1>
+        <div class="galeria-imagenes">
+            <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="Boda" class="img1"/>
+            <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="Boda" class="img1"/>
+        </div>
+    </section>
 
-<section id="galeria" class="galeria">
-  <h1>GALERÍA</h1>
-  <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="Boda" class="img1"/>
-  <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="Boda" class="img1"/>
-</section>
+    <section id="precios" class="precios degradado">
+        <h1>PRECIOS</h1>
+        <p>Paquete 1: $1000</p>
+        <p>Paquete 2: $2000</p>
+        <p>Paquete 3: $3000</p>
+    </section>
 
-<section id="precios" class="precios degradado">
-  <h1>PRECIOS</h1>
-  <p>Paquete 1: $1000</p>
-  <p>Paquete 2: $2000</p>
-  <p>Paquete 3: $3000</p>
-</section>
+    <section id="contacto" class="contacto degradado">
+        <h1>CONTACTO</h1>
+        <p>Teléfono: 123-456-7890</p>
+        <p>Email: contacto@example.com</p>
+    </section>
 
-<section id="contacto" class="contacto degradado">
-  <h1>CONTACTO</h1>
-  <p>Teléfono: 123-456-7890</p>
-  <p>Email: contacto@example.com</p>
-</section>
-
-<button class="chat-button">CHAT</button>
+    <button class="chat-button">CHAT</button>
 
 </body>
 </html>
