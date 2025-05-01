@@ -143,6 +143,14 @@
             align-items: center;
         }
 
+        .espacio {
+            flex: 1;
+            background-color: lightgoldenrodyellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .imagen-superpuesta, .imagenizquierdapareja, .simboloazul, .simbolorosa {
             max-width: 100%;
             height: auto;
@@ -317,10 +325,89 @@
         #galeria {
             background-color: #f2f2f2;
         }
+        .GaleriaGrid {
+            display: grid;
+            grid-template-areas:
+                "a1 a2 a3 a3 a4 a5"
+                "a6 a6 a7 a8 a8 a9";
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(2, 40vh);
+            gap: 10px;
+            margin: 1rem;
+            padding: 1rem;
+            }
+
+        .galeria-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffebf0;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.2rem;
+            color: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            }
+
+        .galeria-1 { grid-area: a1; background-color: #f8bbd0; }
+                .galeria-2 { grid-area: a2; background-color: #f48fb1; }
+                .galeria-3 { grid-area: a3; background-color: #ce93d8; }
+                .galeria-4 { grid-area: a4; background-color: #b39ddb; }
+                .galeria-5 { grid-area: a5; background-color: #9fa8da; }
+                .galeria-6 { grid-area: a6; background-color: #90caf9; }
+                .galeria-7 { grid-area: a7; background-color: #64b5f6; }
+                .galeria-8 { grid-area: a8; background-color: #4fc3f7; }
+                .galeria-9 { grid-area: a9; background-color: #4db6ac; }
+
+            .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            }
 
         #precios {
             background-color: #fff7e6;
         }
+        .Precios {
+        height: 80vh;
+        display: grid;
+        grid-template-areas:
+            "s1 s1 s2 s3 s4"
+            "s5 s5 s2 s3 s4"
+            "s6 s7 s7 s8 s8"
+            "s6 s7 s7 s9 s9";
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 5px;
+        border: 1px solid black;
+        margin: 1rem;
+        padding: 1rem;
+        color: white;
+        }
+
+        .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 1.2rem;
+        padding: 10px;
+        text-align: center;
+        background-color: #ff69b4;
+        border-radius: 10px;
+        }
+
+        .titulo { background-color: #ff9fcf; color: #f44336; font-size: 1.8rem; }
+        .horas { background-color: #ffc4e0; color: #001aff; }
+        .compromiso { background-color: #fff176; color: #ff1744; }
+        .video { background-color: #f3f3f3; color: #1a237e; }
+        .digital { background-color: #0d47a1; color: white; }
+        .cabina { background-color: #ffee58; color: #0d47a1; }
+        .lugar { background-color: black; color: white; }
+        .total { background-color: #ff5722; color: #ffeb3b; font-size: 2rem; }
+        .enviar { background-color: #f8bbd0; color: black; 
+        }
+
 
         #contacto {
             background-color: #f0f8ff;
@@ -358,9 +445,9 @@
             font-family: sans-serif;
             position: relative;
             overflow-x: hidden;
-          }
-      
-          .decoraciones {
+        }
+    
+        .decoraciones {
             position: absolute;
             top: 0;
             left: 0;
@@ -368,36 +455,36 @@
             height: 100%;
             z-index: 1;
             pointer-events: none;
-          }
-      
-          .nosotros {
+        }
+    
+        .nosotros {
             position: relative;
             z-index: 3;
             background-color: #ffffcc;
             padding-top: 80px;
             padding-bottom: 80px;
-          }
-      
-          .img-tex {
+        }
+    
+        .img-tex {
             position: relative;
             z-index: 3;
-          }
-      
-          .img-tex img,
-          .img-tex .texto {
+        }
+    
+        .img-tex img,
+        .img-tex .texto {
             position: relative;
             z-index: 3;
-          }
-      
-          .imagen-superpuesta,
-          .imagenizquierdapareja,
-          .simboloazul,
-          .simbolorosa {
+        }
+    
+        .imagen-superpuesta,
+        .imagenizquierdapareja,
+        .simboloazul,
+        .simbolorosa {
             max-width: 100%;
             height: auto;
-          }
-      
-          .imagen-superpuesta {
+        }
+    
+        .imagen-superpuesta {
             top: 60%;
             width: 30%;
             max-width: 400px;
@@ -405,9 +492,9 @@
             z-index: 1;
             border: 1px solid black;
             border-radius: 45%;
-          }
-      
-          .imagenizquierdapareja {
+        }
+    
+        .imagenizquierdapareja {
             top: 32%;
             width: 15%;
             max-width: 350px;
@@ -415,25 +502,84 @@
             z-index: 1;
             border: 1px solid black;
             border-radius: 30px;
-          }
-      
-          .simboloazul {
+        }
+    
+        .simboloazul {
             top: 30%;
             width: 5%;
             max-width: 100px;
             position: absolute;
             z-index: 1;
             margin-left: 695px;
-          }
-      
-          .simbolorosa {
+        }
+    
+        .simbolorosa {
             top: 46%;
             width: 8%;
             max-width: 150px;
             position: absolute;
             z-index: 1;
             margin-left: 1200px;
-          }
+        }
+
+        .contacto {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 40px;
+            background-color: #f9f9f9;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        .contacto h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .contacto p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .formulario-contacto {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .formulario-contacto input,
+        .formulario-contacto textarea {
+            padding: 12px 16px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .formulario-contacto input:focus,
+        .formulario-contacto textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .formulario-contacto button {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .formulario-contacto button:hover {
+            background-color: #0056b3;
+        }
+
     </style>
 </head>
 <body>
@@ -441,7 +587,7 @@
     <nav class="navbar">
         <input type="checkbox" id="menu-toggle" class="hamburger-checkbox">
         <div class="hamburger-menu">
-            <div></div>
+            <div>dasd</div>
             <div></div>
             <div></div>
         </div>
@@ -474,66 +620,83 @@
     </nav>
 
     <div class="contenedor-principal">
-      <div class="mitadsuperior">
+    <div class="mitadsuperior">
         <div class="texto-superpuesto">CAPTURAMOS <br> LOS <br> SENTIMIENTOS</div>
         <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="imagen1" class="imagen-superpuesta">
-      </div>
-  
-      <img src="imagenes/5fcb349305dfbd5c7d34650e_6016108-R1-E004.jpg" alt="Pareja" class="imagenizquierdapareja">
-      <img src="imagenes/5fc5bd55289f5713c1684ca5_hero-large-shape.svg" alt="Símbolo azul" class="simboloazul">
-      <img src="imagenes/60775529fa8ba96b3888b03f_hero_circle-new-01.png" alt="Símbolo rosa" class="simbolorosa">
-  
-      <div class="mitadinferior">
+    </div>
+
+    <img src="imagenes/5fcb349305dfbd5c7d34650e_6016108-R1-E004.jpg" alt="Pareja" class="imagenizquierdapareja">
+    <img src="imagenes/5fc5bd55289f5713c1684ca5_hero-large-shape.svg" alt="Símbolo azul" class="simboloazul">
+    <img src="imagenes/60775529fa8ba96b3888b03f_hero_circle-new-01.png" alt="Símbolo rosa" class="simbolorosa">
+
+    <div class="mitadinferior">
         
-        
-      </div>
-      <section id="nosotros" class="nosotros">
+    </div>
+    
+    </div>
+
+    <div class="espacio">
+
+    </div>
+    <br>
+    <section id="nosotros" class="nosotros">
         <div class="bolita-1">
-          <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
-          LOVERS OF LOVERS FINE ART FILM PHOTOGRAPHERS
-          <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
+        <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
+        LOVERS OF LOVERS FINE ART FILM PHOTOGRAPHERS
+        <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
         </div>
         <div class="img-tex">
-          <img src="imagenes/5fc5c74bb7097299fbc5a3dd_RETO-OutputVideo-20191018212828-pos.jpg" alt="Nosotros">
-          
+        <img src="imagenes/5fc5c74bb7097299fbc5a3dd_RETO-OutputVideo-20191018212828-pos.jpg" alt="Nosotros">
             <h2>HOLA AQUÍ</h2>
             <p>
-              Somos catadores de pasteles profesionales, pregoneros de bodas y amantes del amor.
-              En resumen, ¡somos grandes fanáticos del matrimonio! El matrimonio es un compromiso muy especial,
-              y tu boda marca el testimonio y la celebración de este vínculo. Estamos muy emocionados por este
-              increíble próximo capítulo de tu vida. ¡Lo recomendamos de todo corazón!
+            Somos catadores de pasteles profesionales, pregoneros de bodas y amantes del amor.
+            En resumen, ¡somos grandes fanáticos del matrimonio! El matrimonio es un compromiso muy especial,
+            y tu boda marca el testimonio y la celebración de este vínculo. Estamos muy emocionados por este
+            increíble próximo capítulo de tu vida. ¡Lo recomendamos de todo corazón!
             </p>
             <h3>TUS NUPCIALISTAS</h3>
         </div>
         <div class="bolita-2">
-          <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
-          <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
+        <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
+        <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
         </div>
-      </section>
-    </div>
-  
-    <section id="galeria" class="galeria">
-      <h1>GALERÍA</h1>
-      <div class="galeria-imagenes">
-        <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="Boda" class="img1"/>
-        <img src="imagenes/5fcb347779d1ee77b54fd806_6016106-R1-E009.jpg" alt="Boda" class="img1"/>
-      </div>
     </section>
-  
-    <section id="precios" class="precios degradado">
-      <h1>PRECIOS</h1>
-      <p>Paquete 1: $1000</p>
-      <p>Paquete 2: $2000</p>
-      <p>Paquete 3: $3000</p>
+
+    <section id="galeria" class="GaleriaGrid">
+        <div class="galeria-item galeria-1"><img src="imagenes/5fcb37527c071f03f345b017_1070677-R1-E001-p-2600.jpeg" alt=""></div>
+        <div class="galeria-item galeria-2"><img src="imagenes/5fcb3794a8a1625058bb6108_1070426-R1-E014-p-500.jpeg" alt=""></div>
+        <div class="galeria-item galeria-3"><img src="imagenes/62b633564a31973a4c2451f0_RESIZEDKennedyAlexWedding421-p-1600.jpeg" alt=""></div>
+        <div class="galeria-item galeria-4"><img src="imagenes/5fcb383c3f2eea6057fa6f8c_1070678-R1-E010-p-1600.jpeg" alt=""></div>
+        <div class="galeria-item galeria-5"><img src="imagenes/5fcb3ffe91c8da1d2f1614f1_amy-scott-wedding-312 -1-.jpg" alt=""></div>
+        <div class="galeria-item galeria-6"><img src="imagenes/62b63666ddbeb878f77c0428_RESIZE KennedyAlexWedding836-2.jpg" alt=""></div>
+        <div class="galeria-item galeria-7"><img src="imagenes/5fcb38ac7c071f9a1446cc84_1070677-R1-E007-p-800.jpeg" alt=""></div>
+        <div class="galeria-item galeria-8"><img src="imagenes/5fcb3b8b8b448eec3c49d39d_6016105-R1-E015-p-2600.jpeg" alt=""></div>
+        <div class="galeria-item galeria-9"><img src="imagenes/5fcb386f1ed39a9b0faf38af_1070427-R1-E008-p-1600.jpeg" alt=""></div>
+    </section>  
+
+    <section id="precios" class="Precios degradado">
+        <div class="item titulo" style="grid-area: s1;">CONSTRUYE TU PROPIO PAQUETE</div>
+        <div class="item horas" style="grid-area: s5;">HORAS TOTALES</div>
+        <div class="item compromiso" style="grid-area: s2;">SESIÓN DE COMPROMISO</div>
+        <div class="item video" style="grid-area: s3;">VIDEO DE LA CEREMONIA</div>
+        <div class="item digital" style="grid-area: s4;">SOLO DIGITAL</div>
+        <div class="item cabina" style="grid-area: s6;">CABINA DE FOTOS</div>
+        <div class="item lugar" style="grid-area: s7;">LUGAR</div>
+        <div class="item total" style="grid-area: s8;">TOTAL $1,938</div>
+        <div class="item enviar" style="grid-area: s9;">ENVÍA MI PAQUETE</div>
+    </section>  
+
+    <section id="contacto" class="contacto">
+        <h2>Contáctanos</h2>
+        <p>Estamos aquí para ayudarte. Por favor completa el formulario y nos pondremos en contacto contigo.</p>
+        <form class="formulario-contacto">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        <button type="submit">Enviar</button>
+        </form>
     </section>
-  
-    <section id="contacto" class="contacto degradado">
-      <h1>CONTACTO</h1>
-      <p>Teléfono: 123-456-7890</p>
-      <p>Email: contacto@example.com</p>
-    </section>
-  
+    
     <button class="chat-button">CHAT</button>
-  
-  </body>
-  </html>
+</body>
+</html>
