@@ -122,7 +122,7 @@
 
         .mitadsuperior {
             flex: 1;
-            background-color: pink;
+            background-color: #feb4cd;
             display: flex;
             color: blue;
             font-size: 50px;
@@ -137,7 +137,7 @@
 
         .mitadinferior {
             flex: 1;
-            background-color: lightgoldenrodyellow;
+            background-color: #fff35f;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -350,20 +350,20 @@
             }
 
         .galeria-1 { grid-area: a1; background-color: #f8bbd0; }
-                .galeria-2 { grid-area: a2; background-color: #f48fb1; }
-                .galeria-3 { grid-area: a3; background-color: #ce93d8; }
-                .galeria-4 { grid-area: a4; background-color: #b39ddb; }
-                .galeria-5 { grid-area: a5; background-color: #9fa8da; }
-                .galeria-6 { grid-area: a6; background-color: #90caf9; }
-                .galeria-7 { grid-area: a7; background-color: #64b5f6; }
-                .galeria-8 { grid-area: a8; background-color: #4fc3f7; }
-                .galeria-9 { grid-area: a9; background-color: #4db6ac; }
+        .galeria-2 { grid-area: a2; background-color: #f48fb1; }
+        .galeria-3 { grid-area: a3; background-color: #ce93d8; }
+        .galeria-4 { grid-area: a4; background-color: #b39ddb; }
+        .galeria-5 { grid-area: a5; background-color: #9fa8da; }
+        .galeria-6 { grid-area: a6; background-color: #90caf9; }
+        .galeria-7 { grid-area: a7; background-color: #64b5f6; }
+        .galeria-8 { grid-area: a8; background-color: #4fc3f7; }
+        .galeria-9 { grid-area: a9; background-color: #4db6ac; }
 
-            .galeria-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            }
+        .galeria-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
 
         #precios {
             background-color: #fff7e6;
@@ -429,12 +429,12 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #00aaff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 18px;
+            background-color: #eeff00;
+            color: black;
+            border: solid 1px;
+            padding: 10px 5px;
+            border-radius: 100px;
+            font-size: 20px;
             cursor: pointer;
         }
 
@@ -522,102 +522,207 @@
             margin-left: 1200px;
         }
 
-        .contacto {
-            max-width: 600px;
-            margin: 80px auto;
-            padding: 40px;
-            background-color: #f9f9f9;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            font-family: sans-serif;
+        #consulta-fecha {
+        background-color: #ffb6c1;
+        padding: 4rem 1rem;
+        font-family: 'Arial Black', sans-serif;
+        color: #000;
+        text-align: center;
         }
 
-        .contacto h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #333;
+        #consulta-fecha h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #0050ff;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
         }
 
-        .contacto p {
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .formulario-contacto {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .formulario-contacto input,
-        .formulario-contacto textarea {
-            padding: 12px 16px;
-            border: 1px solid #ccc;
-            border-radius: 12px;
+        #consulta-fecha p {
+            font-family: 'Arial', sans-serif;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            font-weight: bold;
+            margin-bottom: 2rem;
         }
 
-        .formulario-contacto input:focus,
-        .formulario-contacto textarea:focus {
-            border-color: #007BFF;
+        .fecha-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .fecha-input input {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 2rem;
+            color: #ff5f39;
+            background: none;
+            border: none;
+            border-bottom: 3px solid #ff5f39;
+            text-align: center;
+            padding: 0.5rem;
+            width: 200px;
+        }
+
+        .fecha-input input::placeholder {
+            color: #ff5f39;
+            opacity: 1;
+        }
+
+        .fecha-input input:focus {
             outline: none;
         }
 
-        .formulario-contacto button {
-            background-color: #007BFF;
+        .fecha-input button {
+            background-color: #ff5f39;
             color: white;
-            padding: 12px;
-            font-size: 1rem;
             border: none;
-            border-radius: 12px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
 
-        .formulario-contacto button:hover {
-            background-color: #0056b3;
+        .barra-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border: 5px solid black;
+            margin: 0 auto;
+            padding: 1rem;
+            max-width: 800px;
+            background-color: white;
+            font-family: 'Arial Black', sans-serif;
         }
 
-    </style>
+        .barra-footer .col {
+            flex: 1 1 30%;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+
+        .barra-footer .col a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        
+        .barra-footer .redes {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .barra-footer .redes img {
+            width: 32px;
+            height: 32px;
+            border: 2px solid black;
+            border-radius: 50%;
+            padding: 5px;
+            background-color: white;
+        }
+        
+        .contact-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border: 4px solid black;
+        background-color: white;
+        padding: 10px 20px;
+        width: fit-content;
+        margin: auto;
+        font-family: 'Arial Black', sans-serif;
+        font-size: 10px;
+        text-align: center;
+        }
+
+        .contact-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        margin-right: 20px;
+        }
+
+        .contact-text p {
+        margin: 5px 0;
+        }
+
+        .contact-icons {
+        display: flex;
+        align-items: center;
+        }
+
+        .icon img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid black;
+        padding: 10px;
+        box-sizing: border-box;
+        }
+
+        .facebook img {
+        background-color: #b1f4ff;
+        }
+
+        .instagram img {
+        background-color: #ffd6f6;
+        }
+
+        .telegram img {
+        background-color: #ffe600;
+        }
+
+        .separator {
+        width: 2px;
+        height: 60px;
+        background-color: black;
+        margin: 0 10px;
+        }
+</style>
 </head>
 <body>
 
     <nav class="navbar">
         <input type="checkbox" id="menu-toggle" class="hamburger-checkbox">
         <div class="hamburger-menu">
-            <div>dasd</div>
-            <div></div>
-            <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
         <div class="menu-items">
-            <div class="nav-item">
-                <a href="#nosotros">
-                    <img src="imagenes/5fc5b7daf46a9b00a66bf021_nav-heart.svg" alt="nosotros">
-                    <span>Nosotros</span>
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="#galeria">
-                    <img src="imagenes/5fc5b7dace2996029a332c01_nav-star.svg" alt="galeria">
-                    <span>Galería</span>
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="#precios">
-                    <img src="imagenes/5fc5b7d9d088cd3b91add7e7_nav-flower.svg" alt="Precios">
-                    <span>Precios</span>
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="#contacto">
-                    <img src="imagenes/5fc5b7dabad27a31ffba4fc4_nav-shape.svg" alt="contacto">
-                    <span>Contacto</span>
-                </a>
-            </div>
+          <div class="nav-item">
+            <a href="#nosotros">
+              <img src="imagenes/5fc5b7daf46a9b00a66bf021_nav-heart.svg" alt="nosotros">
+              <span>Nosotros</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a href="#galeria">
+              <img src="imagenes/5fc5b7dace2996029a332c01_nav-star.svg" alt="galeria">
+              <span>Galería</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a href="#precios">
+              <img src="imagenes/5fc5b7d9d088cd3b91add7e7_nav-flower.svg" alt="Precios">
+              <span>Precios</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a href="#consulta-fecha">
+              <img src="imagenes/5fc5b7dabad27a31ffba4fc4_nav-shape.svg" alt="contacto">
+              <span>Contacto</span>
+            </a>
+          </div>
         </div>
-    </nav>
+      </nav>
 
     <div class="contenedor-principal">
     <div class="mitadsuperior">
@@ -632,13 +737,8 @@
     <div class="mitadinferior">
         
     </div>
-    
     </div>
 
-    <div class="espacio">
-
-    </div>
-    <br>
     <section id="nosotros" class="nosotros">
         <div class="bolita-1">
         <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
@@ -646,7 +746,6 @@
         <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
         </div>
         <div class="img-tex">
-        <img src="imagenes/5fc5c74bb7097299fbc5a3dd_RETO-OutputVideo-20191018212828-pos.jpg" alt="Nosotros">
             <h2>HOLA AQUÍ</h2>
             <p>
             Somos catadores de pasteles profesionales, pregoneros de bodas y amantes del amor.
@@ -655,6 +754,7 @@
             increíble próximo capítulo de tu vida. ¡Lo recomendamos de todo corazón!
             </p>
             <h3>TUS NUPCIALISTAS</h3>
+            <img src="imagenes/5fc5c74bb7097299fbc5a3dd_RETO-OutputVideo-20191018212828-pos.jpg" alt="Nosotros">
         </div>
         <div class="bolita-2">
         <img src="imagenes/5fc5c4621ecf2d69372037fb_about-shape.svg" alt="decoración">
@@ -681,21 +781,46 @@
         <div class="item video" style="grid-area: s3;">VIDEO DE LA CEREMONIA</div>
         <div class="item digital" style="grid-area: s4;">SOLO DIGITAL</div>
         <div class="item cabina" style="grid-area: s6;">CABINA DE FOTOS</div>
-        <div class="item lugar" style="grid-area: s7;">LUGAR</div>
-        <div class="item total" style="grid-area: s8;">TOTAL $1,938</div>
+        <div class="item lugar" style="grid-area: s7;"><h2>LUGAR</h2> <br>
+            <img src="imagenes/5fc98576d93bc76b2c461f6b_rm-c.svg" alt=""></div>
+        <div class="item total" style="grid-area: s8;"><h2>TOTAL</h2>
+            <br><br>$1,938</div>
         <div class="item enviar" style="grid-area: s9;">ENVÍA MI PAQUETE</div>
     </section>  
 
-    <section id="contacto" class="contacto">
-        <h2>Contáctanos</h2>
-        <p>Estamos aquí para ayudarte. Por favor completa el formulario y nos pondremos en contacto contigo.</p>
-        <form class="formulario-contacto">
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu correo electrónico" required>
-        <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-        <button type="submit">Enviar</button>
-        </form>
-    </section>
+    
+    <section id="consulta-fecha">
+        <div class="imgx"><img src="imagenes/5fca1cdf1e13e831103302fa_couple.svg" alt=""></div>
+        <h2>CONSULTA<br>TU FECHA</h2>
+        <p>¡Revisemos el calendario para tu GRAN DÍA!</p>
+      
+        <div class="fecha-input">
+          <button type="button"><img src="imagenes/5fc9d26abf0e99192eae9cde_footer-arrow-prev.svg" alt=""></button>
+          <input type="text" placeholder="00/00/0000" />
+          <button type="button"><img src="imagenes/5fc9d26a90f3d96dd459ee12_footer-arrow-next.svg" alt=""></button>
+        </div>
+      
+        <div class="barra-footer">
+            <div class="contact-wrapper">
+                <p>SIGUE NUESTRAS REDES<br>Y CONTÁCTANOS</p>
+                <br>
+                  <p>POLÍTICAS DE PRIVACIDAD</p>
+                <div class="contact-icons">
+                  <div class="icon facebook">
+                    <img src="imagenes/5fca1a6d65765e6aade3737f_facebook.svg" alt="Facebook" />
+                  </div>
+                  <div class="separator"></div>
+                  <div class="icon instagram">
+                    <img src="imagenes/5fca1a6e24622cfcec9bcb64_instagram.svg" alt="Instagram" />
+                  </div>
+                  <div class="separator"></div>
+                  <div class="icon telegram">
+                    <img src="imagenes/5fca1a6ef9f03cfe4654e621_email.svg" alt="Telegram" />
+                  </div>
+                </div>
+              </div>
+        </div>
+      </section>
     
     <button class="chat-button">CHAT</button>
 </body>
